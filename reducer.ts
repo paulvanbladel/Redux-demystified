@@ -1,7 +1,9 @@
-import {Reducer, Action} from './interfaces';
+import {Reducer, Action, AppState} from './interfaces';
 
-let NumberReducer: Reducer<number>
-  = (state: number, action: Action) => {
+let initialState: AppState = { counter: 0 };
+
+let NumberReducer: Reducer<AppState>
+  = (state: AppState = initialState, action: Action): AppState => {
     let actionType: string = null;
 
     if (action !== null) {
@@ -10,11 +12,11 @@ let NumberReducer: Reducer<number>
 
     switch (actionType) {
       case 'INCREMENT':
-        return state + 1;
+        return (<any>Object).assign({},state, {counter : state.counter + 1})
       case 'DECREMENT':
-        return state - 1;
+        return (<any>Object).assign({},state, {counter : state.counter - 1})
       case 'PLUS':
-        return state + action.payload;
+        return (<any>Object).assign({},state, {counter : state.counter + action.payload})
       default:
         return state;
     }

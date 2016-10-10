@@ -14,4 +14,9 @@ interface ListenerCallback {
 interface UnsubscribeCallback {
   (): void;
 }
-export {Action, Reducer, ListenerCallback, UnsubscribeCallback}
+
+interface AppState {
+  counter:number;
+}
+
+export {Action, Reducer, ListenerCallback, UnsubscribeCallback, AppState}
