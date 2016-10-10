@@ -1,22 +1,12 @@
-interface Action {
-  type: string,
-  payload?: any
+import {Action as ReduxAction} from 'redux';
+
+interface Action extends ReduxAction {
+   payload?: any
 }
 
-interface Reducer<T> {
-  (state: T, action: Action): T;
-}
-
-interface ListenerCallback {
-  (): void;
-}
-
-interface UnsubscribeCallback {
-  (): void;
-}
 
 interface AppState {
   counter:number;
 }
 
-export {Action, Reducer, ListenerCallback, UnsubscribeCallback, AppState}
+export {Action,  AppState}

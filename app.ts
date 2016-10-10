@@ -1,14 +1,12 @@
 import {NumberReducer} from './reducer';
-import {RxStore} from './rx-store';
 import {AppState} from './interfaces';
-import {Store} from './store';
+import {createStore } from 'redux';
 
 
-//THE NON-REACTIVE STORY
 
-let store = new Store<AppState>(NumberReducer, {counter:10});
+let store = createStore<AppState>(NumberReducer, {counter:10});
 
-//console.log(store.getState().counter);
+console.log("initial value " + store.getState().counter);
 
 let unsubscribe = store.subscribe(() => {
   console.log('non-reactive subscription : ' + store.getState().counter);
@@ -27,18 +25,18 @@ console.log(store.getState());
 
 
 
-//THE REACTIVE STORY
-let rxStore = new RxStore<AppState>(NumberReducer, {counter:100});
 
-//console.log(rxStore.getState());
+let store2 = createStore<AppState>(NumberReducer, {counter:1000});
+
+console.log("initial value " + store2.getState().counter);
 
 
-rxStore.subscribe(() => {
-  console.log('reactive subscription : ' + rxStore.getState().counter);
+store2.subscribe(() => {
+  console.log('reactive subscription : ' + store2.getState().counter);
 })
 
-rxStore.dispatch({ type: 'INCREMENT' });
-rxStore.dispatch({ type: 'DECREMENT' });
-rxStore.dispatch({ type: 'PLUS', payload: 7 });
-console.log(rxStore.getState().counter);
+store2.dispatch({ type: 'INCREMENT' });
+store2.dispatch({ type: 'DECREMENT' });
+store2.dispatch({ type: 'PLUS', payload: 7 });
+console.log(store2.getState().counter);
 

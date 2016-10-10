@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/paulvanbladel/Redux-demystified#readme",
   "dependencies": {
+    "redux": "^3.6.0",
     "rxjs": "^5.0.0-beta.12"
   }
 }
