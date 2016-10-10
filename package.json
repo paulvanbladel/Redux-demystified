@@ -1,0 +1,23 @@
+{
+  "name": "redux-demystified",
+  "version": "1.0.0",
+  "description": "\"# Redux-demystified\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node app"
+      },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulvanbladel/Redux-demystified.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulvanbladel/Redux-demystified/issues"
+  },
+  "homepage": "https://github.com/paulvanbladel/Redux-demystified#readme",
+  "dependencies": {
+    "rxjs": "^5.0.0-beta.12"
+  }
+}
