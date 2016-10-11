@@ -21,3 +21,6 @@ npm install
 ```sh
 npm start
 ```
+
+## using the real redux package
+There is an additional branch use-redux-package, which does with minimal change the same stuff but with the real redux package.
